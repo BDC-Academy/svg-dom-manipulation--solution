@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Oxygen', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.chart {
+  display: block;
+}
+
+#triangle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: triangle-rotate 1s linear infinite forwards;
+  animation-play-state: paused;
+}
+
+#triangle.triangle-rotate {
+  /* animation: triangle-rotate 1s linear infinite forwards; */
+  animation-play-state: running;
+}
+
+.bubble {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bubble-scale-in 0.3s linear forwards;
+}
+
+@keyframes triangle-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bubble-scale-in {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

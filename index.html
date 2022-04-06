@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <!-- <link rel="icon" href="favicon.svg" type="image/svg+xml"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="BDC Academy: Visualizing data with D3.js" />
+  <title>BDC Academy: Visualizing data with D3.js</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script defer src="js/basic-shapes.js"></script>
+  <script defer src="js/star.js"></script>
+  <script defer src="js/bubbles.js"></script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <svg id="basic-shapes" width="400" height="400">
+      <!-- TODO 1. Dynamically adding svg elements to the DOM with JavaScript
+      We added elements and attributes to the DOM manually, creating static SVG visualisations.
+      If we want to do this dynamically, 
+      because we need to calculate stuff based on data or change the visualisation when the user interacts with it,
+      we use JavaScript to manipulate the DOM just like you would/could with HTML.
+      Later on D3.js and React.js will do this for you, but let's try it ourselfs first.
+      An example of adding a square polygon shape can be found in the js/basic-shapes.js file. 
+      Study it and use the empty functions to recreate the basic shapes from before:
+        - Add a triangle to the basic-shapes svg element
+        - Add a circle to the basic-shapes svg element
+        - Uncomment the HTML button below and use the handler function in basic-shapes.js to change the colors of the shapes every time the button is clicked
+    -->
+    </svg>
+    <button id="change-colors" onclick="handleChangeColorsClick()">Change colors</button>
+
+    <!-- TODO: 2. Listening to SVG events
+      Event listeners on SVG elements work kind of the same as in HTML. 
+      Elements have for example a mouseenter, mouseover and mouseout events which you can bind to a handler function.
+      Just like in HTML, we use the JavaScript addEventListener function to bind element events to handler functions.
+
+        - Add mouse event listeners to the triangle. The triangle should rotate when the mouse is hovering over it and stop rotating when it is not
+        - EXTRA: Make it so it stops at the current position instead of resetting when you mouseout. Tip: CSS property animation-play-state
+
+      Note: the stacking order of the elements is important when hovering
+      Note2: you can find some keyframes in the style.css that handle the rotating motion, you just need to dynamically add and remove the triangle-rotate class name
+    -->
+
+    <svg id="bubbles" width="400" height="400">
+    <!--TODO: 3. catching bubbles
+      Let's combine what we have learned and create a little game that goes as follows:
+      At random interval, position and size blue bubbles pop-up and disappear again. 
+      When you click a blue bubble it turns red and won't disappear anymore unless you click it again.
+      So we are adding elements, removing element and handling click events in this assignment.
+        - Open up js/bubbles.js and study the code
+        - Finish the code that creates a bubble in the createBubble function and see if you can get one on screen and if it responds to the click correctly
+        - Randomly add and remove bubbles using interval and timeout
+
+        - EXTRA: make the bubbles animate in smoothly using keyframes and transform scale
+        - EXTRA: add the radius of the bubble as text inside the circle. 
+          This could represent a score of somekind, for example to catch as many bubbles as possible but keep the total score as low as possible
+        - EXTRA: Also add a square green bubble. If you click it when it's green, you win an the game stops! Don't make it to easy to win though ;)
+      
+      Note: removing an element can be done by the parent element or by the element itself
+      Note2: you can't set the text element content with setAttribute 
+    -->
+  </svg>
+
+
+    <svg id="star" width="400" height="400">
+      <!-- TODO: EXTRA. drawing an open star by calculating angles and sides
+    if we wanted to make an open star without the inside stroke lines we could draw the outer lines by trying to guess the points you need, 
+    but this is really tedious and nearly impossible to get right.
+    The best way to draw a star with only the outerside lines, is to calculate the points and angles and use JavaScript to set the DOM elements and attributes.
+    Open up the star.js file and study the stolen code and text ;) 
+    Try and mess around with the radius and starpoints a bit to see what happens.
+   -->
+    </svg>
+  </div>
+</body>
+
+</html>
