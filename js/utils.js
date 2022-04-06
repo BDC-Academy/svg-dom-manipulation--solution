@@ -1,5 +1,5 @@
 /**
- * Creates an svg svg element, set its id attribute and add it to the DOM.
+ * Creates an svg svg element and sets its id, width and height.
  * @param {string} id 
  * @returns the svg element
  */

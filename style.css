@@ -23,10 +23,6 @@ svg {
   margin: 0 auto;
 }
 
-.chart {
-  display: block;
-}
-
 #triangle {
   transform-box: fill-box;
   transform-origin: center;

@@ -4,7 +4,8 @@
  * @param {SVGElement} parentElement 
  */
 function createSVGTriangle(id, parentElement) {
-  // TODO: Create a triangle using a svg path element and give the opposing side a curve, just like in previous assignments.
+  // TODO: 1.1 Create a triangle using a svg path element and give the opposing side a curve, just like in previous assignments.
+  // Add the new path element to the parent element.
   // Note: See the createSVGSquare function for an example, and of course the previous repo.
   const path = createSVGElement('path');
 
@@ -14,6 +15,10 @@ function createSVGTriangle(id, parentElement) {
   path.setAttribute('fill', 'transparent');
   path.setAttribute('d', 'M 200 50 L 300 250 Q 200 200 100 250 Z');
 
+  parentElement.appendChild(path);
+
+  // TODO: 2.1 Add an event listener mousenter and mouseout to make the triangle rotate
+  // Tip: you can find some keyframes in the style.css that handle the rotating motion, just add and remove the class
   path.addEventListener('mouseenter', function() { 
     this.setAttribute('class', 'triangle-rotate');
   });
@@ -21,8 +26,6 @@ function createSVGTriangle(id, parentElement) {
   path.addEventListener('mouseout', function() { 
     this.removeAttribute('class');
   });
-
-  parentElement.appendChild(path);
 }
 
 /**
@@ -31,7 +34,7 @@ function createSVGTriangle(id, parentElement) {
  * @param {SVGElement} parentElement 
  */
 function createSVGCircle(id, parentElement) {
-  // TODO: Create a circle using a svg path element, just like in previous assignments.
+  // TODO: 1.2 Create a circle using a svg path element and add it to the parent element.
   // Note: See the createSVGSquare function for an example, and of course the previous repo.
   const path = createSVGElement('path');
 
@@ -54,7 +57,7 @@ function handleChangeColorsClick(_event) {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-   // TODO: change the colors of each element each time this handler fires
+   // TODO: 1.3 Get each path element and change the stroke color of each shape each time this handler fires
    const square = getElementById('square');
    const triangle = getElementById('triangle');
    const circle = getElementById('circle');
@@ -64,25 +67,7 @@ function handleChangeColorsClick(_event) {
   circle.setAttribute('stroke', getRandomColor());
 }
 
-/**
- * Handle the rotate triangle button click
- * @param {MouseEvent} event
- */
-function handleRotateTriangle(_event) {
-  debugger;
-  const triangle = getElementById('triangle');
-  const transform = triangle.getAttribute('transform');
-
-  if(!!transform) {
-    const currentDegrees = parseInt(transform.replace('rotate(', '').replace(')', ''));
-    const newDegrees = currentDegrees + 45;
-
-    triangle.setAttribute('transform', `rotate(${newDegrees})`)
-  }
-  else {
-    triangle.setAttribute('transform', 'rotate(45)')
-  }
-}
+//###### readonly ######
 
 /**
  * Creates a square using an svg polygon element.
@@ -103,9 +88,6 @@ function createSVGSquare(id, parentElement) {
   // add the polygon to the svg element as a child
   parentElement.appendChild(polygon);
 }
-
-
-//###### readonly ######
 
 /**
  * Creates an svg element with tagName. 

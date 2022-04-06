@@ -44,11 +44,6 @@ function createInnerAndOuterRadius(parentElement) {
 /**
  * Create a star shape with a polygon element,
  * by calculating what the points should be.
- *
- * - a fixed inner and outer radius 
- * - number of starpoints
- * - calculated center of the star based on inner and outer radius
- * - calculated angle of each point based on the number of starpoints
  * @param {number} id 
  * @param {SVGElement} parentElement 
  */
@@ -63,8 +58,8 @@ function createSVGStar(id, parentElement) {
 
   const points = [];
 
-  // calculate two points for each startPoint (2 * starPoints)
-  //because we have an inner and outer circle/point (count the star points to be sure ;))
+  // Calculate two points for each starPoint (starPoints * 2)
+  // because we have an inner and outer circle/point (count the star points to be sure ;))
   for (var i = 0; i < starPoints * 2; i++) {
     // start at the top outer point. Even numbers i are outer and odd numbers are inner
     var radius = i % 2 === 0 ? outerRadius : innerRadius;
@@ -77,8 +72,8 @@ function createSVGStar(id, parentElement) {
 
   polygon.setAttribute('points', points);
 
-  // To move our star to the center of the svg without messing with its calcularted points
-  // We wrap a g container element around it and transform it.
+  // To move our star to the center of the svg without messing with its calculated points,
+  // we wrap a g container element around it and transform the g (could also transform the polygon).
   const g = createSVGElement('g');
   g.setAttribute('transform', `translate(${translateX}, ${translateY})`);
 
