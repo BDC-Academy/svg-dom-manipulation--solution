@@ -18,7 +18,7 @@ function createBubble() {
   const cx = coordinates[Math.floor(Math.random() * coordinates.length)];
   const cy = coordinates[Math.floor(Math.random() * coordinates.length)];
 
-  // TODO: Create an svg circle element and set attributes stroke, fill, radius and position
+  // TODO: 3.1 Create an svg circle element and set attributes stroke, fill, radius and position
   const bubble = createSVGElement('circle');
   bubble.setAttribute('class', 'bubble');
   // things like stroke can also be put on the g element. If child elements will inherit or override
@@ -48,7 +48,7 @@ function createBubble() {
   bubbleContainer.appendChild(bubble);
   bubbleContainer.appendChild(text);
 
-  //TODO: add an event listener to the bubble that listens to the click event.
+  //TODO: 3.2 add an event listener to the bubble that listens to the click event.
   //When the bubble is clicked, turn it's stroke to red if it isn't already.
   //If the stroke is already red, remove the circle element from the DOM.
   bubbleContainer.addEventListener('click', function (_event) {
@@ -73,7 +73,6 @@ function createSquareBubble() {
   const x = coordinates[Math.floor(Math.random() * coordinates.length)];
   const y = coordinates[Math.floor(Math.random() * coordinates.length)];
 
-  // TODO: Create an svg circle element and set attributes stroke, fill, radius and position
   const bubble = createSVGElement('rect');
   bubble.setAttribute('class', 'bubble');
   bubble.setAttribute('stroke', 'green');
@@ -95,8 +94,8 @@ function createSquareBubble() {
   return bubble;
 }
 
-// TODO: Use an interval to create random bubbles and add them to the svg container.
-// TODO: Use a timeout (inside the interval) to remove the created bubble after a random number of milliseconds IF the stroke is still blue.
+// TODO: 3.3 Use an interval to create random bubbles and add them to the svg container.
+// TODO: 3.4 Use a timeout inside the interval to remove the created bubble after a random number of milliseconds IF the stroke is still blue.
 // Tip: const randomNumber = Math.random() * (2000 - 1200) + 1200; 
 intervalId = setInterval(() => {
   const randomNumber = Math.random() * (2000 - 1200) + 1200;
