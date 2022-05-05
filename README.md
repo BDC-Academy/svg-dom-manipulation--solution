@@ -58,4 +58,3 @@ None, HTML natively supports SVG
 ## Links
 
 - [https://developer.mozilla.org/en-US/docs/Web/API/Document\_Object\_Model#svg\_interfaces](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model#svg_interfaces)
-- [https://developer.mozilla.org/en-US/docs/Web/API/Document\_Object\_Model?retiredLocale=nl](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model?retiredLocale=nl)
