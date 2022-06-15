@@ -70,23 +70,23 @@ function handleChangeColorsClick(_event) {
 //###### readonly ######
 
 /**
- * Creates a square using an svg polygon element.
+ * Creates a square using an svg path element.
  * @param {string} id 
  * @param {SVGElement} parentElement 
  */
 function createSVGSquare(id, parentElement) {
-  // create a polygon element.
-  const polygon = createSVGElement('polygon');
+  // create a path element.
+  const path = createSVGElement('path');
 
   // set the attributes we want with the native setAttribute function
-  polygon.setAttribute('id', id);
-  polygon.setAttribute('stroke', '#294899');
-  polygon.setAttribute('stroke-width', '10');
-  polygon.setAttribute('fill', 'transparent');
-  polygon.setAttribute('points', '100 50,100 250,300 250,300 50');
+  path.setAttribute('id', id);
+  path.setAttribute('stroke', '#294899');
+  path.setAttribute('stroke-width', '10');
+  path.setAttribute('fill', 'transparent');
+  path.setAttribute('d', 'M 100 50 L 100 250 L 300 250 L 300 50 Z');
 
   // add the polygon to the svg element as a child
-  parentElement.appendChild(polygon);
+  parentElement.appendChild(path);
 }
 
 /**
